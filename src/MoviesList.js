@@ -11,7 +11,7 @@ class MoviesList extends PureComponent {
 
   async componentDidMount() {
     try {
-      const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=45b404746d6aecd3a90cbeeeab19a52b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1');
+      const res = await fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=45b404746d6aecd3a90cbeeeab19a52b&language=en-US&page=1&region=us');
       const movies = await res.json();
       this.setState({
         movies: movies.results,
